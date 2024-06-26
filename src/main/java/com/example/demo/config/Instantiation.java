@@ -2,6 +2,7 @@ package com.example.demo.config;
 
 import com.example.demo.domain.Post;
 import com.example.demo.domain.User;
+import com.example.demo.dtos.AuthorDTO;
 import com.example.demo.repositories.PostRepository;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,9 +39,9 @@ public class Instantiation implements CommandLineRunner {
         userRepository.save(alex);
         userRepository.save(bob);
 
-        Post post1 = new Post(null,sdf.parse("21/03/2018"),"Partiu Viagem", "Vou viajar para SP. Abraços.", maria);
-        Post post2 = new Post(null,sdf.parse("23/03/2018"),"Bom dia", "Acordei feliz hoje!",alex);
-        Post post3 = new Post(null,sdf.parse("25/03/2018"),"Partiu mandela", "Hoje é aonde?",bob);
+        Post post1 = new Post(null,sdf.parse("21/03/2018"),"Partiu Viagem", "Vou viajar para SP. Abraços.", new AuthorDTO(maria));
+        Post post2 = new Post(null,sdf.parse("23/03/2018"),"Bom dia", "Acordei feliz hoje!",new AuthorDTO(alex));
+        Post post3 = new Post(null,sdf.parse("25/03/2018"),"Partiu mandela", "Hoje é aonde?",new AuthorDTO(bob));
 
         postRepository.save(post1);
         postRepository.save(post2);
