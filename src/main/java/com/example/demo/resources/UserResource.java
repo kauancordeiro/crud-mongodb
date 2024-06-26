@@ -1,5 +1,6 @@
 package com.example.demo.resources;
 
+import com.example.demo.domain.Post;
 import com.example.demo.domain.User;
 import com.example.demo.dtos.UserDTO;
 import com.example.demo.services.UserService;
@@ -66,6 +67,12 @@ public class UserResource {
 
         return ResponseEntity.noContent().build();
 
+    }
+
+    @GetMapping("/{id}/posts")
+    public ResponseEntity<List<Post>> getAllPosts(@PathVariable String id){
+        User user = service.findById(id);
+        return ResponseEntity.ok().body(user.getPosts());
     }
 
 

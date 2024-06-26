@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.domain.Post;
 import com.example.demo.domain.User;
 import com.example.demo.dtos.UserDTO;
 import com.example.demo.exception.ObjectNotFoundException;
